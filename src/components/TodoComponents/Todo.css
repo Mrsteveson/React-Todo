@@ -1,0 +1,43 @@
+.myApp {
+    max-width: 600px;
+    max-height: 600px;
+    background-image: linear-gradient(to bottom right, lightblue, lightpink);
+    margin: auto;
+    padding: 15px 30px;
+    border: 5px solid black;
+    border-radius: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+}
+
+.todoList {
+    background: silver;
+    border: 2px solid black;
+    border-radius: 15px;
+    width: 80%;
+    margin-bottom: 10px;
+    padding: 15px 0;
+}
+
+.todoContent {
+    font-weight: bold;
+    padding: 5px 15px;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: white;
+    width: 80%;
+    margin: auto;
+    /* margin auto squished them down need to adjust */
+}
+
+.todoContent:hover {
+    cursor: pointer;
+    color: blue;
+}
+
+
+
+
+/* text-decoration:line through somewhere to do the toggle thing */
