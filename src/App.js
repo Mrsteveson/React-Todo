@@ -58,15 +58,33 @@ class App extends React.Component {
 
   }
 
+  finished = event => {
+
+
+    this.state({
+      // todoList: newTodoList
+    });
+  }
+
+  clearCompleted = event => {
+
+
+    this.state({
+      // todoList: newTodoList
+    });
+  }
+
+
   render() {
     return (
       <div className = 'myApp'>
-        <h2>Hello and Welcome to Patrick's Todo App!</h2>
-        <TodoList todoList = {this.state.todoList}/>
+        <h2>Hello and Welcome to Patrick's To-Do App!</h2>
+        <TodoList todoList = {this.state.todoList} finished={this.finished}/>
         <TodoForm 
           updateList = {this.updateList}
           todoText = {this.state.todoText}
           handleChange = {this.handleChange}
+          clearCompleted = {this.clearCompleted}
         />
       </div>
     );

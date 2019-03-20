@@ -9,7 +9,14 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    animation: glow 1000ms infinite;
+}
 
+@keyframes glow {
+    0% { box-shadow: 0 0 -10px red; }
+    40% { box-shadow: 0 0 20px blue; }
+    60% { box-shadow: 0 0 20px purple; }
+    100% { box-shadow: 0 0 -10px green; }
 }
 
 h2 {
@@ -69,8 +76,7 @@ button:hover {
     background: white;
 }
 
-.finished {
-    text-decoration: line-through;
-}
-
 /* text-decoration:line through to do the toggle thing */
+/* .finished {
+    text-decoration: line-through;
+} */
