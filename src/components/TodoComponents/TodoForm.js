@@ -3,10 +3,10 @@ import './Todo.css';
 
 const TodoForm = props => {
     return (
-    <div>
-        <form>
+    <div className = 'todoForm'>
+        <form onSubmit = {props.updateList}>
             <input 
-                className = 'todoForm'
+                className = 'todoInput'
                 type = 'text'
                 name = 'todoText'
                 placeholder = 'Next!'
@@ -14,7 +14,7 @@ const TodoForm = props => {
                 onChange = {props.handleChange}
             />
 
-            <button onClick = {props.updateList}>Add Todo</button>
+            <button>Add Todo</button>
             <button>Clear Completed</button>     
         </form>
     </div>

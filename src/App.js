@@ -46,9 +46,6 @@ class App extends React.Component {
 
   updateList = event => {
     event.preventDefault();
-    // const addNewTodo = {
-    //   todoText: this.state.todoText,
-    // };
 
     this.setState({
       todoList: [
@@ -67,7 +64,7 @@ class App extends React.Component {
         <h2>Hello and Welcome to Patrick's Todo App!</h2>
         <TodoList todoList = {this.state.todoList}/>
         <TodoForm 
-          addNew = {this.addNew}
+          updateList = {this.updateList}
           todoText = {this.state.todoText}
           handleChange = {this.handleChange}
         />
