@@ -5,7 +5,7 @@ const Todo = props => {
     return(
         <div>
             <p 
-            className = "todoContent"
+            className = {props.todoList.completed ? 'finished' : 'todoContent'}
             onClick = {() => props.finished(props.todoList.id)}
             >
             {props.todoList.task}</p>
