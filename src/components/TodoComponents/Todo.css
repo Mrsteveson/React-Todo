@@ -80,3 +80,7 @@ button:hover {
 .finished {
     text-decoration: line-through;
 }
+
+.completed {
+    text-decoration: line-through;
+}

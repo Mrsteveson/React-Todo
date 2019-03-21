@@ -61,7 +61,6 @@ class App extends React.Component {
   }
 
   finished = id => {
-    // let newTodoList = [...this.state.todoList]
     let newTodoList = this.state.todoList.slice();
     newTodoList = newTodoList.map(item => {
       if(item.id === id) {
