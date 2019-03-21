@@ -77,6 +77,6 @@ button:hover {
 }
 
 /* text-decoration:line through to do the toggle thing */
-/* .finished {
+.finished {
     text-decoration: line-through;
-} */
+}

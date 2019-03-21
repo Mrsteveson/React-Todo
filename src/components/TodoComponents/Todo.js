@@ -4,7 +4,11 @@ import './Todo.css';
 const Todo = props => {
     return(
         <div>
-            <p className = "todoContent" id={props.unfinished.id} onClick = {props.finished}>{props.unfinished.task}</p>
+            <p 
+            className = "todoContent" 
+            onClick = {() => props.finished(props.todoList.id)}
+            >
+            {props.todoList.task}</p>
         </div>
     )
 }

@@ -60,19 +60,35 @@ class App extends React.Component {
 
   }
 
-  finished = event => {
+  finished = id => {
+    // let newTodoList = [...this.state.todoList]
+    let newTodoList = this.state.todoList.slice();
+    newTodoList = newTodoList.map(item => {
+      if(item.id === id) {
+        item.completed = !item.completed;
+        return item;
+      }
 
+      else {
+        return item;
+      }
+    });
 
-    this.state({
-      // todoList: newTodoList
+    this.setState({
+      todoList: newTodoList
     });
   }
 
   clearCompleted = event => {
     event.preventDefault();
 
-    this.state({
-      // todoList: newTodoList
+    let newTodoList = this.state.todoList.slice();
+    newTodoList = newTodoList.filter(item => {
+      return item.completed === false;
+    });
+
+    this.setState({
+      todoList: newTodoList
     });
   }
 
@@ -81,7 +97,10 @@ class App extends React.Component {
     return (
       <div className = 'myApp'>
         <h2>Hello and Welcome to Patrick's To-Do App!</h2>
-        <TodoList todoList = {this.state.todoList} finished={this.finished}/>
+        <TodoList 
+          todoList = {this.state.todoList}
+          finished={this.finished}
+        />
         <TodoForm 
           updateList = {this.updateList}
           todoText = {this.state.todoText}

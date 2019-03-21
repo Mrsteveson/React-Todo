@@ -8,7 +8,7 @@ const TodoList = props => {
             {props.todoList.map(myTodo => (
                 <Todo 
                     key = {myTodo.id}
-                    unfinished = {myTodo}
+                    todoList = {myTodo}
                     finished = {props.finished}
                 />
             ))}
