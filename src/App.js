@@ -60,35 +60,62 @@ class App extends React.Component {
 
   }
 
+  // finished = id => {
+  //   let newTodoList = this.state.todoList.slice();
+  //   newTodoList = newTodoList.map(item => {
+  //     if(item.id === id) {
+  //       item.completed = !item.completed;
+  //       return item;
+  //     }
+
+  //     else {
+  //       return item;
+  //     }
+  //   });
+
+  //   this.setState({
+  //     todoList: newTodoList
+  //   });
+  // }
+
+  // both version of finished work.
+  // trying to simplify it so it makes more sense to me.
   finished = id => {
-    let newTodoList = this.state.todoList.slice();
-    newTodoList = newTodoList.map(item => {
-      if(item.id === id) {
-        item.completed = !item.completed;
-        return item;
-      }
-
-      else {
-        return item;
-      }
-    });
-
     this.setState({
-      todoList: newTodoList
-    });
-  }
+      todoList: this.state.todoList.map(item =>{
+        if (item.id === id) {
+          return {...item, completed: !item.completed};
+        }
 
+        else {
+          return item
+        }
+      }),
+    });
+  };
+
+
+  // clearCompleted = event => {
+  //   event.preventDefault();
+
+  //   let newTodoList = this.state.todoList.slice();
+  //   newTodoList = newTodoList.filter(item => {
+  //     return item.completed === false;
+  //   });
+
+  //   this.setState({
+  //     todoList: newTodoList
+  //   });
+  // }
+
+  // Same deal both work.
+  // Playing with this.setState just seems simpler.
   clearCompleted = event => {
     event.preventDefault();
 
-    let newTodoList = this.state.todoList.slice();
-    newTodoList = newTodoList.filter(item => {
-      return item.completed === false;
-    });
-
     this.setState({
-      todoList: newTodoList
-    });
+      todoList: this.state.todoList.filter(item => item.completed === false),
+    })
   }
 
 
