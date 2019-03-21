@@ -53,7 +53,9 @@ class App extends React.Component {
         {task: this.state.todoText,
         id: Date.now(),
         completed: false,}
-      ]
+      ],
+
+      todoText: '',
     });
 
   }
@@ -67,7 +69,7 @@ class App extends React.Component {
   }
 
   clearCompleted = event => {
-
+    event.preventDefault();
 
     this.state({
       // todoList: newTodoList
